@@ -16,6 +16,18 @@ public class CartaoCredito {
         this. compras = new ArrayList<>();
     }
 
+    public double getLimite() {
+        return limite;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public List<Compra> getCompras() {
+        return new ArrayList<>(compras);
+    }
+
     public void realizarCompra() {
         Scanner scanner = new Scanner(System.in);
 
