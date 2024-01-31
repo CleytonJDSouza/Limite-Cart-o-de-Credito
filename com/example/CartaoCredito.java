@@ -42,19 +42,18 @@ public class CartaoCredito {
     }
 
     public void exixbirResumo(){
-        System.out.println("\nRESUMO DAS COMPRAS:");
-        exibirCompras();
-        System.out.println("Saldo do cartão: " + saldo);
-    }
+        System.out.println("\n=======================");
+        System.out.println("RESUMO DAS COMPRAS");
+        System.out.println("=======================");
 
-    /*public void exibirComprasOrdenadas() {
-        Collections.sort(compras);
         for (Compra compra : compras) {
-            System.out.println(compra);
+            System.out.println(compra.getDescricao() + " = " + compra.getValor());
         }
 
+        System.out.println("=======================");
         System.out.println("Saldo do cartão: " + saldo);
-    }*/
+        System.out.println("=======================");
+    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
