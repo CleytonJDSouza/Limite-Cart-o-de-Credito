@@ -12,14 +12,14 @@ public class CartaoCredito {
     
     public CartaoCredito(double limite) {
         this.limite = limite;
-        this.saldo = saldo;
+        this.saldo = limite;
         this. compras = new ArrayList<>();
     }
 
     public void realizarCompra() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Didite a descrição da compra: ");
+        System.out.println("Digite a descrição da compra: ");
         String descricao = scanner.nextLine();
 
         System.out.println("Digite o valor da compra: ");
@@ -35,14 +35,26 @@ public class CartaoCredito {
         }
     }
 
-    public void exibirComprasOrdenadas() {
+    public void exibirCompras() {
+        for (Compra compra : compras) {
+            System.out.println(compra);
+        }
+    }
+
+    public void exixbirResumo(){
+        System.out.println("\nRESUMO DAS COMPRAS:");
+        exibirCompras();
+        System.out.println("Saldo do cartão: " + saldo);
+    }
+
+    /*public void exibirComprasOrdenadas() {
         Collections.sort(compras);
         for (Compra compra : compras) {
             System.out.println(compra);
         }
 
         System.out.println("Saldo do cartão: " + saldo);
-    }
+    }*/
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -63,6 +75,6 @@ public class CartaoCredito {
         } while (opcao != 0);
 
         System.out.println("COMPRAS REALIZADAS:");
-        cartao.exibirComprasOrdenadas();
+        cartao.exixbirResumo();
     }
 }
